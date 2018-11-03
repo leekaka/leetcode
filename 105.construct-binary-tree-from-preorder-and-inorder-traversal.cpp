@@ -13,14 +13,14 @@ public:
 	int pl = preorder.size()-1, il = inorder.size()-1;
 	if(pl<0||il<0)return NULL;
 
-	return build(preorder,0,inorder,0,il);
+	return build(preorder,0,inorder,0,il);  // 只需要 中序遍历的始末
     }
 
     TreeNode* build(vector<int>& preorder,int pstart,vector<int>& inorder,int istart, int iend)
     {
 	if(istart>iend)return NULL;
 
-	TreeNode* root = new TreeNode(preorder[pstart]);
+	TreeNode* root = new TreeNode(preorder[pstart]); // 中序遍历的 第一个数 就是根节点
 
 	int index = 0;
 	for(int i = istart;i<=iend;i++)
@@ -32,7 +32,7 @@ public:
 	}
 
 	root->left = build(preorder,pstart+1,inorder,istart,index-1);
-	root->right = build(preorder,pstart+index-istart+1,inorder,index+1,iend);
+	root->right = build(preorder,pstart+index-istart+1,inorder,index+1,iend); // 注意 边界条件
 
 	return root;
 
