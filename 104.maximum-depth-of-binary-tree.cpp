@@ -10,7 +10,7 @@
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
-       queue<TreeNode*>que;
+       queue<TreeNode*>que;    // 使用queue层序遍历
        if(!root)return 0;
        que.push(root);
        int res = 0;
@@ -29,3 +29,12 @@ public:
        return res;
     }
 };
+
+/*
+ * 增加 递归的写法
+ * int maxDepth(TreeNode* root)
+ * {
+ * if(!root)return 0;
+ * return max(maxDepth(root->left),maxDepth(root->right)) + 1;
+ * }
+ */
