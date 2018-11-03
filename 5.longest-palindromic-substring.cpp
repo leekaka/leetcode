@@ -46,7 +46,7 @@ public:
 	    int j = i,k = i;
 	    while(k<s.size()-1 && s[k+1] == s[k])k++;
 	    i = k + 1  ;                       // 更新 i 
-	    while(j>0 && k<s.size()-1 && s[k+1] == s[j-1]){j--;k++;}
+	    while(j>0 && k<s.size()-1 && s[k+1] == s[j-1]){j--;k++;} // 找回文
 	    int tmplen = k-j+1;
 	    if(tmplen>=maxlen){maxlen=tmplen;start=j;}
 	}
