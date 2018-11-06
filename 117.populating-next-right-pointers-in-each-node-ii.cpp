@@ -16,7 +16,7 @@ public:
 	{
 	    if(cur->left)
 	    {
-		if(tail) tail = tail->next = cur->left;
+		if(tail) tail = tail->next = cur->left;  // 如果存在尾巴，则移动尾巴
 		else head = tail = cur->left;
 	    }
 
