@@ -45,11 +45,11 @@
 class Solution {
 public:
     ListNode* rotateRight(ListNode* head, int k) {
-	ListNode*newHead,*tailHead;                      //使用循环立列表
+	ListNode*newHead,*tailHead;       //使用循环立列表
 	if(!head)return head;
 	int len =1;
 	newHead=tailHead=head;
-	while(tailHead->next)                            //求链表长度
+	while(tailHead->next)             //求链表长度
 	{
 	    tailHead=tailHead->next;
 	    len++;
