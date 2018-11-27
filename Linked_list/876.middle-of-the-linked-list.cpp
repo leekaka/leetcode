@@ -63,10 +63,11 @@ public:
     ListNode* middleNode(ListNode* head) {
 	ListNode*slow=head,*fast=head;  
         //	cout<<head->val<<endl;   注意第一个节点便是head,没有头指针
+
 	while(fast && fast->next)
 	{
 	    slow=slow->next;
-	    fast=fast->next->next;
+	    fast=fast->next->next;      //先后两个指针
 	}
 	return slow;
     }
