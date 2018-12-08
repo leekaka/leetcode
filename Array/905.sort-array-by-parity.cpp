@@ -46,7 +46,7 @@ public:
 
 	for(int i = 0; i<len; i++)
 	{
-	    if(A[i]%2 == 0)
+	    if(A[i]&1 == 0)
 	    {
 		res[start++] = A[i];
 	    }
