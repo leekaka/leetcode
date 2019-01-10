@@ -51,8 +51,7 @@ public:
 	while(i<len)
 	{
 	    if(bits[i]==1)i+=2;
-	    else
-		i++;
+	    else i++;
 	}
 	if (len == i)return true;
 	else return false;
