@@ -38,7 +38,7 @@ public:
 	return res;
     }
 
-    void dfs(int n, int k, int start, vector<int>tmp)
+    void dfs(int n, int k, int start, vector<int>&tmp)
     {
 	if(tmp.size() == k)
 	{
