@@ -23,8 +23,6 @@ public:
 	    }
 
 	    root = root->left;
-
 	}
-        
     }
 };

@@ -44,16 +44,15 @@ public:
 	
 	while(node)
 	{
-	    ListNode*next=node->next;
 	    if(node->val==val)
 	    {
-		pre->next = next;
+		pre->next = node->next;
 	    }
 	    else
 	    {
 		pre=node;
 	    }
-	    node=next;
+	    node=node->next;
 	}
 
 	return head;
