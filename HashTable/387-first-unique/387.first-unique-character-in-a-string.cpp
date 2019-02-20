@@ -29,19 +29,20 @@
  */
 class Solution {
 public:
-    int firstUniqChar(string s) { 
-       unordered_map<char,pair<int,int>>map; // map 记当前字符的录出现次数和位置
-       int index = s.size();
-       for(int i=0;i<s.size();i++)
-       {
-	   map[s[i]].first++;
-	   map[s[i]].second = i;
-       }
+    int firstUniqChar(string s) {
+	unordered_map<char,pair<int,int>>map;
+	int index = s.size();
+	for(int i=0;i<s.size();i++)
+	{
+	    map[s[i]].first++;
+	    map[s[i]].second=i;
+	}
 
-       for(auto &p:map)
-       {
-	   if(p.second.first==1)index = min(index,p.second.second);
-       }
-       return index==s.size()?-1:index; // 当index 仍是s.size()时 则没有只出现一次的字符
+	for(auto c:s)
+	{
+	    if(map[c].first==1)index = min(index,map[c].second);
+	}
+	return index==s.size()?-1:index;
+        
     }
 };

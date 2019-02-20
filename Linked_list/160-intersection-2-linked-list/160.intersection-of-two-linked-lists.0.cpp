@@ -43,33 +43,22 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-
-/*
- * 两个不等的线段并起来最后的长度相同，用两个指针同时走就行
- * a1->a2->c1->c2->c3->b1->b2->b3->c1->c2->c3
- * b1->b2->b3->c1->c2->c3->a1->a2->c1->c2->c3
-*/
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-	ListNode*L1=headA;
-	ListNode*L2=headB;
-	while(L1&&L2)
+	if(!headA || !headB)return NULL;
+	ListNode* a=headA;
+	ListNode* b=headB;
+	while( a && b )
 	{
-	    if(L1->val!=L2->val)
-	    {
-		L1=L1->next;
-		L2=L2->next;
-		
-		if(!L1&&!L2)return NULL;
-		if(!L1)L1=headB;
-		if(!L2)L2=headA;
-	    }
-	    else
-	    {
-		return L1;
-	    }
+	    if(a==b)return a;
+	    a=a->next;
+	    b=b->next;
+	    if(a==b)return a;
+	    if(!a)a=headB;
+	    if(!b)b=headA;
 	}
 	return NULL;
+        
     }
 };
